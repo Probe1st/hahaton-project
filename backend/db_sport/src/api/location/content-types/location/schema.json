@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "states",
+  "collectionName": "locations",
   "info": {
-    "singularName": "state",
-    "pluralName": "states",
-    "displayName": "State",
+    "singularName": "location",
+    "pluralName": "locations",
+    "displayName": " Location",
     "description": ""
   },
   "options": {
@@ -14,14 +14,14 @@
   "attributes": {
     "Name": {
       "type": "string",
-      "unique": true,
-      "required": true
+      "required": true,
+      "unique": true
     },
-    "tournaments": {
+    "tournament": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::tournament.tournament",
-      "mappedBy": "state"
+      "inversedBy": "locations"
     }
   }
 }

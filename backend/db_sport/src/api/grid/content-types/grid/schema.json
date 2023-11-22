@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "states",
+  "collectionName": "grids",
   "info": {
-    "singularName": "state",
-    "pluralName": "states",
-    "displayName": "State",
-    "description": ""
+    "singularName": "grid",
+    "pluralName": "grids",
+    "displayName": "Grid"
   },
   "options": {
     "draftAndPublish": true
@@ -14,14 +13,14 @@
   "attributes": {
     "Name": {
       "type": "string",
-      "unique": true,
-      "required": true
+      "required": true,
+      "unique": true
     },
-    "tournaments": {
+    "tournament": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::tournament.tournament",
-      "mappedBy": "state"
+      "inversedBy": "grids"
     }
   }
 }
