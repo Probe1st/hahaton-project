@@ -10,7 +10,7 @@ import TournamentsSettings from "../pages/tournamentSettings/TournamentSettings"
 import ErrorPage from "../pages/errorPage/ErrorPage";
 
 
-const publicRoutes = [
+export const publicRoutes = [
     {
         path: "/",
         element: <Home />
@@ -40,7 +40,7 @@ const publicRoutes = [
         element: <Comand />
     }
 ];
-const privateRoutes = [
+export const privateRoutes = [
     {
         path: "/tournaments/:id/settings",
         element: <TournamentsSettings />

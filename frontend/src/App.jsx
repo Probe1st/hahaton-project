@@ -5,8 +5,10 @@ import Header from "./components/ui/Header";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Router />
+      <div className="cont">
+        <Header />
+        <Router />
+      </div>
     </BrowserRouter>
   );
 }

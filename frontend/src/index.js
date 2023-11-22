@@ -10,7 +10,9 @@ export const Context = createContext()
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Context.Provider>
+    <Context.Provider value={{
+      isDarkMode: false
+    }}>
       <App />
     </Context.Provider>
   </React.StrictMode>
