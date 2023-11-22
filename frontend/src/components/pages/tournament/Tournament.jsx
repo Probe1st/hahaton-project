@@ -1,12 +1,12 @@
+import { useParams } from "react-router-dom"
+
 export default function Tournament() {
-    const urlParams = window.location.href;
-    const matches = urlParams.match(/\d+/g)[1];
+    const {id} = useParams();
 
     return (
         <>
             <h1>Tournament</h1>
-            <p>query</p>
-            <p>{matches}</p>
+            <p>id: {id}</p>
         </>        
     )
 }

@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header className="flex flex-row justify-between items-center mb-10 font-semibold">
       {/* logo */}
-      <div className="w-12 h-12 bg-red-600"></div>
+      <Link to={"/"} className="w-12 h-12 bg-red-600"></Link>
 
       {/* nav */}
       <nav className="flex flex-row justify-between space-x-7">
