@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_sports",
+  "info": {
+    "singularName": "user-sport",
+    "pluralName": "user-sports",
+    "displayName": "UserSport",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nickname": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "role_users": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::role-user.role-user",
+      "mappedBy": "user_sport"
+    }
+  }
+}
