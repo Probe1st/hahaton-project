@@ -18,16 +18,71 @@ body {
     @apply text-[#AC0707];
 }
 
+.set-bg-img {
+    @apply bg-center bg-cover
+}
+
+.elem-list {
+    @apply flex flex-row justify-between items-start space-x-5
+}
+
+.svg-bg-white {
+    @apply bg-white
+}
+
+::-webkit-scrollbar {
+    @apply w-2
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-inherit
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-[#566C7B] rounded-full
+}
 
 /* -------------------------------------------------- */
 .promo-block {
-    @apply text-3xl;
+    @apply flex flex-row justify-between text-3xl min-h-[15rem];
 }
 
 .promo-block > div:first-child {
-    @apply w-[45%] space-y-10
+    @apply flex flex-col justify-between w-[45%]
 }
 
 .promo-block > div:first-child > div {
     @apply flex flex-row items-start space-x-5
+}
+
+/* -------------------------------------------------- */
+
+.scroll-bar::-webkit-scrollbar {
+    @apply w-2
+}
+
+.scroll-bar::-webkit-scrollbar-track {
+    @apply bg-inherit
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+    @apply bg-[#566C7B] rounded-full
+}
+
+/* --------------------------------------------------- */
+
+.auth-form {
+    @apply flex flex-col items-center rounded-3xl font-normal bg-black px-10 py-12 min-w-[38rem] space-y-7
+}
+
+.auth-form label {
+    @apply flex flex-col space-y-2 text-xl w-full
+}
+
+.auth-form input {
+    @apply outline-none bg-[#231B1B] rounded-xl px-3 py-1 h-10 
+}
+
+.auth-form select {
+    @apply outline-none bg-[#231B1B] rounded-xl px-3 py-1 h-10 
 }
