@@ -56,6 +56,18 @@
     "Rules": {
       "type": "richtext",
       "required": true
+    },
+    "user_sports": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::user-sport.user-sport",
+      "inversedBy": "tournaments"
+    },
+    "results": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::result.result",
+      "inversedBy": "tournaments"
     }
   }
 }

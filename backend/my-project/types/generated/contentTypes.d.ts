@@ -695,11 +695,6 @@ export interface ApiFormatFormat extends Schema.CollectionType {
       'manyToOne',
       'api::tournament.tournament'
     >;
-    teams: Attribute.Relation<
-      'api::format.format',
-      'oneToMany',
-      'api::team.team'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -827,6 +822,21 @@ export interface ApiMatchMatch extends Schema.CollectionType {
       'oneToMany',
       'api::state.state'
     >;
+    result: Attribute.Relation<
+      'api::match.match',
+      'oneToOne',
+      'api::result.result'
+    >;
+    user_sports: Attribute.Relation<
+      'api::match.match',
+      'manyToMany',
+      'api::user-sport.user-sport'
+    >;
+    teams: Attribute.Relation<
+      'api::match.match',
+      'oneToMany',
+      'api::team.team'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -851,12 +861,28 @@ export interface ApiResultResult extends Schema.CollectionType {
     singularName: 'result';
     pluralName: 'results';
     displayName: ' Result';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Score: Attribute.String;
+    tournaments: Attribute.Relation<
+      'api::result.result',
+      'manyToMany',
+      'api::tournament.tournament'
+    >;
+    match: Attribute.Relation<
+      'api::result.result',
+      'oneToOne',
+      'api::match.match'
+    >;
+    teams: Attribute.Relation<
+      'api::result.result',
+      'oneToMany',
+      'api::team.team'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -963,10 +989,20 @@ export interface ApiTeamTeam extends Schema.CollectionType {
   };
   attributes: {
     Name: Attribute.String;
-    format: Attribute.Relation<
+    user_sports: Attribute.Relation<
+      'api::team.team',
+      'oneToMany',
+      'api::user-sport.user-sport'
+    >;
+    result: Attribute.Relation<
       'api::team.team',
       'manyToOne',
-      'api::format.format'
+      'api::result.result'
+    >;
+    match: Attribute.Relation<
+      'api::team.team',
+      'manyToOne',
+      'api::match.match'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1019,6 +1055,16 @@ export interface ApiTournamentTournament extends Schema.CollectionType {
     Date: Attribute.DateTime & Attribute.Required;
     fee_tournament: Attribute.Integer & Attribute.Required;
     Rules: Attribute.RichText & Attribute.Required;
+    user_sports: Attribute.Relation<
+      'api::tournament.tournament',
+      'manyToMany',
+      'api::user-sport.user-sport'
+    >;
+    results: Attribute.Relation<
+      'api::tournament.tournament',
+      'manyToMany',
+      'api::result.result'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1055,6 +1101,21 @@ export interface ApiUserSportUserSport extends Schema.CollectionType {
       'api::user-sport.user-sport',
       'oneToMany',
       'api::role-user.role-user'
+    >;
+    team: Attribute.Relation<
+      'api::user-sport.user-sport',
+      'manyToOne',
+      'api::team.team'
+    >;
+    tournaments: Attribute.Relation<
+      'api::user-sport.user-sport',
+      'manyToMany',
+      'api::tournament.tournament'
+    >;
+    matches: Attribute.Relation<
+      'api::user-sport.user-sport',
+      'manyToMany',
+      'api::match.match'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

@@ -23,6 +23,24 @@
       "relation": "oneToMany",
       "target": "api::role-user.role-user",
       "mappedBy": "user_sport"
+    },
+    "team": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::team.team",
+      "inversedBy": "user_sports"
+    },
+    "tournaments": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tournament.tournament",
+      "mappedBy": "user_sports"
+    },
+    "matches": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::match.match",
+      "mappedBy": "user_sports"
     }
   }
 }

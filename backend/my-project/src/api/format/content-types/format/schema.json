@@ -22,12 +22,6 @@
       "relation": "manyToOne",
       "target": "api::tournament.tournament",
       "inversedBy": "formats"
-    },
-    "teams": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::team.team",
-      "mappedBy": "format"
     }
   }
 }

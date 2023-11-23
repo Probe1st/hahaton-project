@@ -15,10 +15,22 @@
     "Name": {
       "type": "string"
     },
-    "format": {
+    "user_sports": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::user-sport.user-sport",
+      "mappedBy": "team"
+    },
+    "result": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::format.format",
+      "target": "api::result.result",
+      "inversedBy": "teams"
+    },
+    "match": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::match.match",
       "inversedBy": "teams"
     }
   }
