@@ -13,3 +13,21 @@ body {
 .cont {
     @apply w-5/6 mx-auto min-h-[100vh] py-7 
 }
+
+.text-red {
+    @apply text-[#AC0707];
+}
+
+
+/* -------------------------------------------------- */
+.promo-block {
+    @apply text-3xl;
+}
+
+.promo-block > div:first-child {
+    @apply w-[45%] space-y-10
+}
+
+.promo-block > div:first-child > div {
+    @apply flex flex-row items-start space-x-5
+}

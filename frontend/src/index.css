@@ -525,12 +525,16 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.mb-10 {
-  margin-bottom: 2.5rem;
+.mb-20 {
+  margin-bottom: 5rem;
 }
 
 .mt-\[30vh\] {
   margin-top: 30vh;
+}
+
+.block {
+  display: block;
 }
 
 .flex {
@@ -585,6 +589,10 @@ video {
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
 }
 
+.bg-\[url\(\'media\/images\/i_1\.png\'\)\] {
+  background-image: url('media/images/i_1.png');
+}
+
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -618,4 +626,38 @@ body {
   width: 83.333333%;
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
+}
+
+.text-red {
+  --tw-text-opacity: 1;
+  color: rgb(172 7 7 / var(--tw-text-opacity));
+}
+
+/* -------------------------------------------------- */
+
+.promo-block {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.promo-block > div:first-child {
+  width: 45%;
+}
+
+.promo-block > div:first-child > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
+
+.promo-block > div:first-child > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.promo-block > div:first-child > div > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
