@@ -16,17 +16,17 @@
       "required": true,
       "unique": true
     },
-    "tournament": {
+    "tournaments": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::tournament.tournament",
-      "inversedBy": "states"
+      "mappedBy": "state"
     },
-    "match": {
+    "matches": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::match.match",
-      "inversedBy": "states"
+      "mappedBy": "state"
     }
   }
 }

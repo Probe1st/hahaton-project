@@ -51,7 +51,7 @@ const filters = [
     },
 ]
 
-export default function FiltersPanel() {
+export default function FiltersPanel({ filter }) {
     return (
         <>
             {filters.map(e => {
@@ -61,7 +61,7 @@ export default function FiltersPanel() {
                         <select style={{ backgroundImage: `url(${window.env.URL_TO_MEDIA}icons/arrow-down.svg)` }} className="cursor-pointer outline-none px-5 py-2 w-full rounded-xl bg-[#566C7B] after:-mr-10 appearance-none bg-no-repeat bg-[center_right_0.5rem]" name="filter" id={e.name}>
                             {e.options.map(e => {
                                 return (
-                                    <option key={e} value={"e"}>{e}</option>
+                                    <option onChange={e => filter.setFilters()} key={e} value={"e"}>{e}</option>
                                 )
                             })}
                         </select>

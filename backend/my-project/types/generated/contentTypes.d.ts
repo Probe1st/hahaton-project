@@ -690,9 +690,9 @@ export interface ApiFormatFormat extends Schema.CollectionType {
   };
   attributes: {
     Name: Attribute.String & Attribute.Required & Attribute.Unique;
-    tournament: Attribute.Relation<
+    tournaments: Attribute.Relation<
       'api::format.format',
-      'manyToOne',
+      'oneToMany',
       'api::tournament.tournament'
     >;
     createdAt: Attribute.DateTime;
@@ -726,9 +726,9 @@ export interface ApiGameGame extends Schema.CollectionType {
   };
   attributes: {
     Name: Attribute.String & Attribute.Required & Attribute.Unique;
-    tournament: Attribute.Relation<
+    tournaments: Attribute.Relation<
       'api::game.game',
-      'manyToOne',
+      'oneToMany',
       'api::tournament.tournament'
     >;
     createdAt: Attribute.DateTime;
@@ -753,9 +753,9 @@ export interface ApiGridGrid extends Schema.CollectionType {
   };
   attributes: {
     Name: Attribute.String & Attribute.Required & Attribute.Unique;
-    tournament: Attribute.Relation<
+    tournaments: Attribute.Relation<
       'api::grid.grid',
-      'manyToOne',
+      'oneToMany',
       'api::tournament.tournament'
     >;
     createdAt: Attribute.DateTime;
@@ -780,9 +780,9 @@ export interface ApiLocationLocation extends Schema.CollectionType {
   };
   attributes: {
     Name: Attribute.String & Attribute.Required & Attribute.Unique;
-    tournament: Attribute.Relation<
+    tournaments: Attribute.Relation<
       'api::location.location',
-      'manyToOne',
+      'oneToMany',
       'api::tournament.tournament'
     >;
     createdAt: Attribute.DateTime;
@@ -817,9 +817,9 @@ export interface ApiMatchMatch extends Schema.CollectionType {
   attributes: {
     Start_time: Attribute.Time;
     time_end: Attribute.Time & Attribute.Required;
-    states: Attribute.Relation<
+    state: Attribute.Relation<
       'api::match.match',
-      'oneToMany',
+      'manyToOne',
       'api::state.state'
     >;
     result: Attribute.Relation<
@@ -948,14 +948,14 @@ export interface ApiStateState extends Schema.CollectionType {
   };
   attributes: {
     Name: Attribute.String & Attribute.Required & Attribute.Unique;
-    tournament: Attribute.Relation<
+    tournaments: Attribute.Relation<
       'api::state.state',
-      'manyToOne',
+      'oneToMany',
       'api::tournament.tournament'
     >;
-    match: Attribute.Relation<
+    matches: Attribute.Relation<
       'api::state.state',
-      'manyToOne',
+      'oneToMany',
       'api::match.match'
     >;
     createdAt: Attribute.DateTime;
@@ -1027,29 +1027,29 @@ export interface ApiTournamentTournament extends Schema.CollectionType {
   };
   attributes: {
     Name: Attribute.String;
-    formats: Attribute.Relation<
+    format: Attribute.Relation<
       'api::tournament.tournament',
-      'oneToMany',
+      'manyToOne',
       'api::format.format'
     >;
-    games: Attribute.Relation<
+    game: Attribute.Relation<
       'api::tournament.tournament',
-      'oneToMany',
+      'manyToOne',
       'api::game.game'
     >;
-    grids: Attribute.Relation<
+    grid: Attribute.Relation<
       'api::tournament.tournament',
-      'oneToMany',
+      'manyToOne',
       'api::grid.grid'
     >;
-    states: Attribute.Relation<
+    state: Attribute.Relation<
       'api::tournament.tournament',
-      'oneToMany',
+      'manyToOne',
       'api::state.state'
     >;
-    locations: Attribute.Relation<
+    location: Attribute.Relation<
       'api::tournament.tournament',
-      'oneToMany',
+      'manyToOne',
       'api::location.location'
     >;
     Date: Attribute.DateTime & Attribute.Required;

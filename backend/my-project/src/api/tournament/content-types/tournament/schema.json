@@ -15,35 +15,35 @@
     "Name": {
       "type": "string"
     },
-    "formats": {
+    "format": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::format.format",
-      "mappedBy": "tournament"
+      "inversedBy": "tournaments"
     },
-    "games": {
+    "game": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::game.game",
-      "mappedBy": "tournament"
+      "inversedBy": "tournaments"
     },
-    "grids": {
+    "grid": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::grid.grid",
-      "mappedBy": "tournament"
+      "inversedBy": "tournaments"
     },
-    "states": {
+    "state": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::state.state",
-      "mappedBy": "tournament"
+      "inversedBy": "tournaments"
     },
-    "locations": {
+    "location": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::location.location",
-      "mappedBy": "tournament"
+      "inversedBy": "tournaments"
     },
     "Date": {
       "type": "datetime",

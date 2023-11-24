@@ -19,11 +19,11 @@
       "type": "time",
       "required": true
     },
-    "states": {
+    "state": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::state.state",
-      "mappedBy": "match"
+      "inversedBy": "matches"
     },
     "result": {
       "type": "relation",

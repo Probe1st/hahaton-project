@@ -7,7 +7,7 @@ export const ComandsService = {
     async getAll() {
         const res = await axios.get(this.url);
 
-        return res.data;
+        return res.data.data;
     },
     async getById(id) {
         const res = await axios.get(this.url + id);

@@ -8,9 +8,7 @@ export default function Header() {
 
       {/* nav */}
       <nav className="flex flex-row justify-between space-x-7">
-        <Link to={"/tournaments"}>Турниры</Link>
-        <Link to={'/comands'}>Команды</Link>
-        
+        <Link to={"/tournaments"}>Турниры</Link>        
       </nav>
 
       {/* sign in link */}
