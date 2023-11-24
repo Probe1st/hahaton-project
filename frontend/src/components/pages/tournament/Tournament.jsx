@@ -10,9 +10,36 @@ const tournaments = [
         format: "Онлайн",
         date: "24.11.2023",
         state: "Идет",
-        members: 300,
+        membersCount: 300,
+        members: [
+            {
+                name: "name",
+            },
+            {
+                name: "name2",
+            },
+            {
+                name: "name3",
+            },
+            {
+                name: "name4",
+            },
+            {
+                name: "name",
+            },
+            {
+                name: "name2",
+            },
+            {
+                name: "name3",
+            },
+            {
+                name: "name4",
+            },
+        ],
         organizers: ["Some Organizer1", "Some Organizer2", "Some Organizer3"],
-        gridType: "Single Elimination"
+        gridType: "Single Elimination",
+        rools: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore sint blanditiis, tempora molestiae at dicta minus, a possimus omnis quia alias consequatur voluptatum exercitationem vitae magni illo porro nulla! Iure."
     },
     {
         id: 2,
@@ -20,9 +47,36 @@ const tournaments = [
         format: "Онлайн",
         date: "15.05.2024",
         state: "Запланирован",
-        members: 100,
+        membersCount: 100,
+        members: [
+            {
+                name: "name",
+            },
+            {
+                name: "name2",
+            },
+            {
+                name: "name3",
+            },
+            {
+                name: "name4",
+            },
+            {
+                name: "name",
+            },
+            {
+                name: "name2",
+            },
+            {
+                name: "name3",
+            },
+            {
+                name: "name4",
+            },
+        ],
         organizers: ["Some Organizer1", "Some Organizer2", "Some Organizer3"],
-        gridType: "Battle Royale"
+        gridType: "Battle Royale",
+        rools: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore sint blanditiis, tempora molestiae at dicta minus, a possimus omnis quia alias consequatur voluptatum exercitationem vitae magni illo porro nulla! Iure."
     },
     {
         id: 3,
@@ -30,9 +84,36 @@ const tournaments = [
         format: "Онлайн",
         date: "22.11.2023",
         state: "Прошел",
-        members: 500,
+        membersCount: 500,
+        members: [
+            {
+                name: "name",
+            },
+            {
+                name: "name2",
+            },
+            {
+                name: "name3",
+            },
+            {
+                name: "name4",
+            },
+            {
+                name: "name",
+            },
+            {
+                name: "name2",
+            },
+            {
+                name: "name3",
+            },
+            {
+                name: "name4",
+            },
+        ],
         organizers: ["Some Organizer1", "Some Organizer2", "Some Organizer3"],
-        gridType: "Dable Elimination"
+        gridType: "Dable Elimination",
+        rools: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore sint blanditiis, tempora molestiae at dicta minus, a possimus omnis quia alias consequatur voluptatum exercitationem vitae magni illo porro nulla! Iure."
     },
 ]
 
@@ -50,7 +131,7 @@ export default function Tournament() {
                         <div className="text-2xl w-2/5 font-thin">
                             <h1 className="text-5xl mb-10">Турнир {tournament.name}</h1>
                             <div className="space-y-5">
-                                <p>Количество участников | {tournament.members}  |</p>
+                                <p>Количество участников | {tournament.membersCount}  |</p>
                                 <p>Организаторы: {tournament.organizers.join(", ")}</p>
                                 <p>Тип сетки: {tournament.gridType}</p>
                             </div>
@@ -64,7 +145,7 @@ export default function Tournament() {
 
                     <PageChanger page={{page, setPage}} />
 
-                    <Pages currentPage={page} />
+                    <Pages rools={tournament.rools} currentPage={page} members={tournament.members} />
                 </div>
             ) : (
                 <p>Турнир не найден</p>

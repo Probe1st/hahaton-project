@@ -1,7 +1,7 @@
 
 
-export default function Rools() {
+export default function Rools({rools}) {
     return (
-        <p>Rools</p>
+        <div className="text-2xl whitespace-pre-line w-full">{rools}</div>
     )
 }
