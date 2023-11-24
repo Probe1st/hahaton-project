@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "role_users",
+  "info": {
+    "singularName": "role-user",
+    "pluralName": "role-users",
+    "displayName": "RoleUser"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "user_sport": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::user-sport.user-sport",
+      "inversedBy": "role_users"
+    }
+  }
+}

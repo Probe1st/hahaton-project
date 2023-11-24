@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tournaments",
+  "info": {
+    "singularName": "tournament",
+    "pluralName": "tournaments",
+    "displayName": " Tournament",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "formats": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::format.format",
+      "mappedBy": "tournament"
+    },
+    "games": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::game.game",
+      "mappedBy": "tournament"
+    },
+    "grids": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::grid.grid",
+      "mappedBy": "tournament"
+    },
+    "states": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::state.state",
+      "mappedBy": "tournament"
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::location.location",
+      "mappedBy": "tournament"
+    },
+    "Date": {
+      "type": "datetime",
+      "required": true
+    },
+    "fee_tournament": {
+      "type": "integer",
+      "required": true
+    },
+    "Rules": {
+      "type": "richtext",
+      "required": true
+    },
+    "user_sports": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::user-sport.user-sport",
+      "inversedBy": "tournaments"
+    },
+    "results": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::result.result",
+      "inversedBy": "tournaments"
+    }
+  }
+}
