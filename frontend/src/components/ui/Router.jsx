@@ -1,11 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "../pages/home/Home";
 import Auth from "../pages/auth/Auth";
-import Comands from "../pages/comands/Comands";
 import Tournaments from "../pages/tournaments/Tournaments";
 import Profile from "../pages/profile/Profile";
 import Tournament from "../pages/tournament/Tournament";
-import Comand from "../pages/comand/Comand";
 import TournamentsSettings from "../pages/tournamentSettings/TournamentSettings";
 import ErrorPage from "../pages/errorPage/ErrorPage";
 
@@ -20,10 +18,6 @@ export const publicRoutes = [
         element: <Auth />
     },
     {
-        path: "/comands",
-        element: <Comands />
-    },
-    {
         path: "/tournaments",
         element: <Tournaments />
     },
@@ -35,10 +29,6 @@ export const publicRoutes = [
         path: "/tournaments/:id",
         element: <Tournament />
     },
-    {
-        path: "/comands/:id",
-        element: <Comand />
-    }
 ];
 export const privateRoutes = [
     {

@@ -86,3 +86,21 @@ body {
 .auth-form select {
     @apply outline-none bg-[#231B1B] rounded-xl px-3 py-1 h-10 
 }
+
+/* -------------------------------------------------- */
+
+.pageChangerBlock {
+    @apply flex flex-row justify-between w-10/12 mx-auto bg-[#564141] rounded-xl
+}
+
+.pageChangerBlock button {
+    @apply py-5 px-10 border-r-2 border-black w-full text-center
+}
+
+.pageChangerBlock button:hover {
+    @apply bg-[#808080] 
+}
+
+.pageChangerBlock button:nth-child(4) {
+    @apply border-none
+}
