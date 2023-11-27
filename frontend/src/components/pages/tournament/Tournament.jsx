@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom"
 import PageChanger from "./pageChanger/PageChanger";
 import { useEffect, useState } from "react"
 import Pages from "./pages/Pages";
-import { TournamentService } from "../../services/tournament.service";
+import { TournamentService } from "../../../services/tournament.service";
 
 export default function Tournament() {
     const [page, setPage] = useState("comands")

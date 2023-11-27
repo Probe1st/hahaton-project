@@ -1,12 +1,28 @@
+import { Popover, Transition } from '@headlessui/react';
+import FiltersPanel from './FiltersPanel';
+import { Fragment, useEffect, useState } from 'react';
 
-export default function Search({func}) {
+
+export default function Search() {
+    const [filters, setFilters] = useState({
+        "Дата Турнира": "",
+        "Турнирный взнос": "",
+        "Тип сетки": "",
+        "Формат турнира": "",
+        "Место проведения": "",
+        "Сервер": "",
+    });
+
+    useEffect(() => {
+        console.log(filters)
+    }, [filters])
 
     return (
         <div className="flex flex-row justify-between items-center px-5 py-2 rounded-xl border border-white bg-[#97727270]">
             <p className="text-3xl font-normal">Поиск турнира</p>
 
             {/* filters */}
-            {/* <Popover>
+            <Popover>
                 <Popover.Button className={"w-10 h-10 outline-none set-bg-img"} style={{ backgroundImage: `url(${window.env.URL_TO_MEDIA}icons/filters.png)` }}></Popover.Button>
 
                 <Transition
@@ -19,11 +35,11 @@ export default function Search({func}) {
                     leaveTo="opacity-0 translate-y-1">
 
                     <Popover.Panel className={"absolute flex flex-wrap justify-between px-16 gap-x-36 gap-y-8 py-8 left-1/2 -translate-x-1/2 mt-7 border border-white bg-[#4f3d3d] w-5/6 rounded-xl"}>
-                        <FiltersPanel filter={{filters, setFilters}} />
+                        <FiltersPanel filterState={{ filters, setFilters }} />
                     </Popover.Panel>
 
                 </Transition>
-            </Popover> */}
+            </Popover>
         </div>
     )
 }
